@@ -7,7 +7,7 @@ A simulation-based comparison of **traditional Google Maps–style routing** vs 
 
 ---
 
-## 🎯 What this project does
+## What this project does
 
 Most navigation apps (Google Maps, Apple Maps, Waze) compute a single "best" route from A → B using Dijkstra's algorithm **once** at the start of the trip, then stick to that route even if road conditions change mid-journey.
 
@@ -28,7 +28,7 @@ In the bundled demos, **Better Google Maps consistently achieves a lower average
 
 ---
 
-## 📁 Repository structure
+## Repository structure
 
 ```
 BetterGoogleMapsConcept/
@@ -58,7 +58,7 @@ BetterGoogleMapsConcept/
 
 ---
 
-## 🔧 Core algorithms
+## Core algorithms
 
 ### `dijkstra(graph, start, end)` — `distributedDijkstra.py:117`
 Standard Dijkstra's shortest-path using a custom min-heap (`SpecialMinHeap`). Returns `(total_distance, path)`.
@@ -135,11 +135,11 @@ from utils.google_graph_writer import write_google_graph
 write_google_graph("Four Seasons Hotel, Mumbai", "Dhirubhai Ambani International School, Mumbai")
 ```
 
-> ⚠️ Live mode requires a valid Google Maps API key. The default key in the source may be expired/invalid; if so, the code falls back to the cached graph data under `test_graphs/`.
+> Warning: Live mode requires a valid Google Maps API key. The default key in the source may be expired/invalid; if so, the code falls back to the cached graph data under `test_graphs/`.
 
 ---
 
-## 📊 Data formats
+## Data formats
 
 ### Road network (`test_graphs/*.csv`)
 Comma-separated, no header. Each row is one undirected road:
@@ -167,7 +167,7 @@ start_node,end_node
 
 ---
 
-## 🧠 How to read the results
+## How to read the results
 
 - **Lower average time per person = better.**
 - Because `better_google_maps` re-optimizes whenever a road segment finishes, it naturally avoids edges that other travelers have just congested. Over many travelers this typically reduces total system age and mean commute time compared to the static `google_maps` approach.
@@ -175,7 +175,7 @@ start_node,end_node
 
 ---
 
-## 🛠 Extending the project
+## Extending the project
 
 - **Add a new graph:** create `test_graphs/my_graph.csv` in `from,to,cost` format, then point `trial.py` or `plot_graph.py` at it.
 - **Add a new routing strategy:** write a function with the same signature as `google_maps(graph, everyone)` / `better_google_maps(graph, everyone)` and pass it to `simulator(graph, strategy(graph, people))`.
@@ -184,12 +184,12 @@ start_node,end_node
 
 ---
 
-## 📜 License
+## License
 
 This project is maintained by Darsh (@Darshcmd) for educational and demonstration purposes.
 
 ---
 
-## 🔗 Link
+## Link
 
 - This repository: https://github.com/Darshcmd/BetterGoogleMapsConcept
