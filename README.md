@@ -114,6 +114,7 @@ Avg Time Taken/Person for BetterGoogleMaps Maps: 11.8
 ```
 
 ### Option 2: Full demo (3 steps + bonus map)
+Enter Google Maps API Key in /utils/google_map_plotter.py/
 
 ```bash
 chmod +x demo.sh
