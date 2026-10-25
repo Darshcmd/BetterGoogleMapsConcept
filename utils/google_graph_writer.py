@@ -7,7 +7,8 @@ _BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _TEST_GRAPHS_DIR = os.path.join(_BASE_DIR, 'test_graphs')
 _TEST_PERSONS_DIR = os.path.join(_BASE_DIR, 'test_persons')
 
-def write_google_graph(start, end, API='AIzaSyCWmcq5BfF4LFha5ZufuEO27ixsl3OpBjs', directions_link="https://maps.googleapis.com/maps/api/directions/json?"):   
+def write_google_graph(start, end, API=#enter API key
+                       , directions_link="https://maps.googleapis.com/maps/api/directions/json?"):   
     try:
         start = find_loc(start, API)
         end = find_loc(end, API)
